@@ -1,7 +1,7 @@
 import Sidebar from '@/components/Sidebar'
 import Navbar from '@/components/ui/Navbar'
 import { Metadata } from 'next';
-import React, { Children, ReactNode } from 'react'
+import React, { ReactNode } from 'react'
 
 export const metadata: Metadata = {
   title: "Stream",
