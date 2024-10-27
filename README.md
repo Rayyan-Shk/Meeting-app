@@ -1,36 +1,94 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Stream - Video Conferencing Application
+
+## Introduction
+Stream is a modern video conferencing application built with Next.js and TypeScript. It provides a seamless and secure platform for real-time video meetings, screen sharing, and collaboration. The application offers features similar to popular platforms like Zoom while maintaining high performance and user privacy.
+
+## Features
+
+### Core Features
+- **Secure Authentication** - User authentication powered by Clerk
+- **Real-time Video Conferencing** - High-quality video meetings using getstream
+- **Screen Sharing** - Share your screen during meetings
+- **Meeting Recording** - Record meetings for future reference
+- **Chat Functionality** - Real-time chat during meetings
+
+### Meeting Controls
+- Camera and microphone controls
+- Meeting recording options
+- Emoji reactions
+- Screen sharing capabilities
+- Audio settings management
+- Grid layout customization
+- Participant management
+  - Pin/unpin participants
+  - Mute/unmute controls
+  - Video permissions
+
+### Meeting Management
+- **Quick Meetings** - Start instant meetings
+- **Scheduled Meetings** - Plan future meetings
+- **Personal Meeting Rooms** - Dedicated spaces for hosts
+- **Meeting History** - Access past meeting recordings
+- **Join via Link** - Easy meeting access through shareable links
+
+## Tech Stack
+- **Frontend Framework**: Next.js 14
+- **Language**: TypeScript
+- **Authentication**: Clerk
+- **Video SDK**: getstream
+- **UI Components**: shadcn
+- **Styling**: Tailwind CSS
+
+## Screenshots
+
+![Home Page](/public/screenshots/Home.png)
+![Meeting Page](/public/screenshots/Meeting.png)
+![Recordings](/public/screenshots/Recordings.png)
 
 ## Getting Started
 
-First, run the development server:
+### Installation
 
+1. Clone the repository
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/yourusername/stream.git
+cd stream
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install dependencies
+```bash
+npm install # or yarn install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Obtaining API Keys
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+#### Clerk Authentication Keys
+1. Go to [clerk.dev](https://clerk.dev) and sign up for an account
+2. Create a new application
+3. Navigate to API Keys in the dashboard
+4. Copy the `Publishable Key` and `Secret Key`
 
-## Learn More
+#### GetStream Video SDK Keys
+1. Visit [getstream.io](https://getstream.io) and create an account
+2. Create a new project and select "Video & Audio" product
+3. Go to the Dashboard > Project Settings
+4. Copy the `API Key` and `API Secret`
 
-To learn more about Next.js, take a look at the following resources:
+### Configuration
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Create a `.env.local` file in the root directory and add:
+```env
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=your_clerk_publishable_key
+CLERK_SECRET_KEY=your_clerk_secret_key
+NEXT_PUBLIC_CLERK_SIGN_IN_URL=/sign-in
+NEXT_PUBLIC_CLERK_SIGN_UP_URL=/sign-up
+NEXT_PUBLIC_STREAM_API_KEY=your_stream_api_key
+STREAM_SECRET_KEY=your_stream_secret_key
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+2. Run the development server
+```bash
+npm run dev # or yarn dev
+```
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+3. Open [http://localhost:3000](http://localhost:3000) in your browser
